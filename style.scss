@@ -25,6 +25,8 @@ section{
     .all-reels{
         height: 100%;
         width: 100%;
+        overflow: auto;
+        scrollbar-width: none;
 
         .reel{
             height: 100%;
@@ -45,8 +47,22 @@ section{
                 
                 .info{
                     display: flex;
-                    gap: 10px;
+                    align-items: center;
+                    justify-content: center;
+                    gap: 15px;
                 }
+            }
+
+            .right{
+               position: absolute; 
+               bottom: 100px;
+               right: 1px;
+               display: flex;
+               flex-direction: column;
+               gap: 15px;
+               padding: 2px;
+               align-items: center;
+               justify-content: center;
             }
         }
         .reel img{
@@ -59,6 +75,24 @@ section{
             padding: 5px 20px;
             border: 1px solid white;
             border-radius: 5px;
+        }
+        .info button:active{
+            scale: 0.95;
+        }
+        .right i{
+            font-size: xx-large;
+        }
+        .right p{
+            font-size: medium;
+        }
+        .all-reels::-webkit-scrollbar{
+            display: none;
+        }
+        .info img{
+            height: 35px;
+            width: 35px;
+            object-fit: cover;
+            border-radius: 50%;
         }
     }
 }

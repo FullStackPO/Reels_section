@@ -28,6 +28,8 @@ section {
 section .all-reels {
   height: 100%;
   width: 100%;
+  overflow: auto;
+  scrollbar-width: none;
 }
 section .all-reels .reel {
   height: 100%;
@@ -48,7 +50,20 @@ section .all-reels .reel .bottom {
 }
 section .all-reels .reel .bottom .info {
   display: flex;
-  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+section .all-reels .reel .right {
+  position: absolute;
+  bottom: 100px;
+  right: 1px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 2px;
+  align-items: center;
+  justify-content: center;
 }
 section .all-reels .reel img {
   height: 100%;
@@ -61,4 +76,23 @@ section .all-reels .info button {
   padding: 5px 20px;
   border: 1px solid white;
   border-radius: 5px;
+}
+section .all-reels .info button:active {
+  scale: 0.95;
+}
+section .all-reels .right i {
+  font-size: xx-large;
+}
+section .all-reels .right p {
+  font-size: medium;
+}
+section .all-reels .all-reels::-webkit-scrollbar {
+  display: none;
+}
+section .all-reels .info img {
+  height: 35px;
+  width: 35px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 50%;
 }/*# sourceMappingURL=style.css.map */
