@@ -8,6 +8,7 @@
 html, body {
   height: 100%;
   width: 100%;
+  overflow: hidden;
 }
 
 main {
@@ -29,12 +30,15 @@ section .all-reels {
   height: 100%;
   width: 100%;
   overflow: auto;
+  scroll-snap-type: y mandatory;
   scrollbar-width: none;
+  scroll-behavior: smooth;
 }
 section .all-reels .reel {
   height: 100%;
   width: 100%;
   position: relative;
+  scroll-snap-align: start;
 }
 section .all-reels .reel .bottom {
   height: 15%;

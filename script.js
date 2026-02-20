@@ -119,3 +119,41 @@ const reels = [
         userprofile: "https://images.unsplash.com/photo-1494790108377-be9c29b29330"
     }
 ];
+
+let clutter = '';
+reels.forEach(function(elem){
+    clutter += `
+    <div class="reel">
+                    <img src="${elem.userprofile}" alt="">
+                    <div class="bottom">
+                        <div class="info">
+                            <img src="${elem.userprofile}" alt="">
+                            <h2>${elem.username}</h2>
+                            <button>Follow</button>
+                        </div>
+                        <div class="caption">
+                            <h3>${elem.caption}</h3>
+                        </div>
+                    </div>
+                    <div class="right">
+                        <div class="like">
+                            <i class="ri-poker-hearts-line"></i>
+                            <p>${elem.likeCount}</p>
+                        </div>
+                        <div class="comment">
+                            <i class="ri-chat-3-line"></i>
+                            <p>${elem.commentCount}</p>
+                        </div>
+                        <div class="share">
+                            <i class="ri-share-forward-line"></i>
+                            <p>${elem.shareCount}</p>
+                        </div>
+                        <div class="menu">
+                            <i class="ri-more-2-line"></i>
+                        </div>
+                    </div>
+                </div>
+    `
+})
+
+document.querySelector('.all-reels').innerHTML = clutter
