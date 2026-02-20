@@ -39,6 +39,7 @@ section .all-reels .reel {
   width: 100%;
   position: relative;
   scroll-snap-align: start;
+  scroll-snap-stop: always;
 }
 section .all-reels .reel .bottom {
   height: 15%;
