@@ -70,10 +70,11 @@ section{
                justify-content: center;
             }
         }
-        .reel img{
+        .reel video{
             height: 100%;
             width: 100%;
             object-fit: cover;
+            position: absolute;
         }
         .info button{
             background-color: transparent;

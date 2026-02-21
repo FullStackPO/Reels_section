@@ -70,11 +70,12 @@ section .all-reels .reel .right {
   align-items: center;
   justify-content: center;
 }
-section .all-reels .reel img {
+section .all-reels .reel video {
   height: 100%;
   width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+  position: absolute;
 }
 section .all-reels .info button {
   background-color: transparent;
