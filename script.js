@@ -2,7 +2,7 @@ const reels = [
     {
         username: "codewithayush",
         likeCount: 14820,
-        isLiked: false,
+        isLiked: true,
         commentCount: 423,
         shareCount: 92,
         isFollowed: false,
@@ -138,7 +138,7 @@ reels.forEach(function(elem,idx){
                     </div>
                     <div class="right">
                         <div id="${idx}" class="like">
-                            <i class="ri-poker-hearts-line"></i>
+                           <div class="like-logo">${elem.isLiked?'<i id="fill" class="ri-poker-hearts-fill"></i>':'<i class="ri-poker-hearts-line"></i>'}</div>
                             <p>${elem.likeCount}</p>
                         </div>
                         <div class="comment">

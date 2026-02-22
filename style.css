@@ -92,6 +92,9 @@ section .all-reels .right i {
 section .all-reels .right p {
   font-size: medium;
 }
+section .all-reels .right #fill {
+  color: crimson;
+}
 section .all-reels .all-reels::-webkit-scrollbar {
   display: none;
 }
