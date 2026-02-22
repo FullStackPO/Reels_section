@@ -118,8 +118,11 @@ const reels = [
     }
 ];
 
+
+function add_data(){
+let all_reels = document.querySelector('.all-reels');
 let clutter = '';
-reels.forEach(function(elem){
+reels.forEach(function(elem,idx){
     clutter += `
     <div class="reel">
                     <video loop playsinline autoplay muted src="${elem.video}"></video>
@@ -134,7 +137,7 @@ reels.forEach(function(elem){
                         </div>
                     </div>
                     <div class="right">
-                        <div class="like">
+                        <div id="${idx}" class="like">
                             <i class="ri-poker-hearts-line"></i>
                             <p>${elem.likeCount}</p>
                         </div>
@@ -153,5 +156,7 @@ reels.forEach(function(elem){
                 </div>
     `
 })
+all_reels.innerHTML = clutter;
+}
 
-document.querySelector('.all-reels').innerHTML = clutter
+add_data();
