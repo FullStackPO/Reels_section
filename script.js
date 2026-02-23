@@ -142,11 +142,11 @@ reels.forEach(function(elem,idx){
                             <p>${elem.likeCount}</p>
                         </div>
                         <div class="comment">
-                            <i class="ri-chat-3-line"></i>
+                           <div class="comment-logo"><i class="ri-chat-3-line"></i></div>
                             <p>${elem.commentCount}</p>
                         </div>
                         <div class="share">
-                            <i class="ri-share-forward-line"></i>
+                            <div class="share_logo"><i class="ri-share-forward-line"></i></div>
                             <p>${elem.shareCount}</p>
                         </div>
                         <div class="menu">

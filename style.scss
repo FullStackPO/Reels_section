@@ -29,7 +29,6 @@ section{
         overflow: auto;
         scroll-snap-type: y mandatory;
         scrollbar-width: none;
-        scroll-behavior: smooth;
 
         .reel{
             height: 100%;
@@ -37,6 +36,7 @@ section{
             position: relative;
             scroll-snap-align: start;
             scroll-snap-stop: always;
+            scrollbar-width: smooth;
 
             .bottom{
                 height: 15%;
