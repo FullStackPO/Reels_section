@@ -95,6 +95,13 @@ section .all-reels .right p {
 section .all-reels .right #fill {
   color: crimson;
 }
+section .all-reels .right > div h4 {
+  pointer-events: none;
+  font-weight: 100;
+}
+section .all-reels .right > div p {
+  pointer-events: none;
+}
 section .all-reels .all-reels::-webkit-scrollbar {
   display: none;
 }

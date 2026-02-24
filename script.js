@@ -2,7 +2,7 @@ const reels = [
     {
         username: "codewithayush",
         likeCount: 14820,
-        isLiked: true,
+        isLiked: false,
         commentCount: 423,
         shareCount: 92,
         isFollowed: false,
@@ -13,7 +13,7 @@ const reels = [
     {
         username: "designbysan",
         likeCount: 9820,
-        isLiked: true,
+        isLiked: false,
         commentCount: 184,
         shareCount: 41,
         isFollowed: false,
@@ -27,7 +27,7 @@ const reels = [
         isLiked: false,
         commentCount: 612,
         shareCount: 138,
-        isFollowed: true,
+        isFollowed: false,
         caption: "When flexbox finally aligns the way you wanted 😭🔥",
         video: "./videos/3.mp4",
 
@@ -48,10 +48,10 @@ const reels = [
     {
         username: "daily.dev.quotes",
         likeCount: 3120,
-        isLiked: true,
+        isLiked: false,
         commentCount: 102,
         shareCount: 55,
-        isFollowed: true,
+        isFollowed: false,
         caption: "Code. Sleep. Repeat. That’s the cycle.",
         video: "./videos/5.mp4",
 
@@ -63,7 +63,7 @@ const reels = [
         isLiked: false,
         commentCount: 540,
         shareCount: 87,
-        isFollowed: true,
+        isFollowed: false,
         caption: "No gym? No problem. Do this 12-min workout at home.",
         video: "./videos/6.mp4",
 
@@ -72,7 +72,7 @@ const reels = [
     {
         username: "streetfoodlover",
         likeCount: 68000,
-        isLiked: true,
+        isLiked: false,
         commentCount: 1304,
         shareCount: 412,
         isFollowed: false,
@@ -87,7 +87,7 @@ const reels = [
         isLiked: false,
         commentCount: 267,
         shareCount: 73,
-        isFollowed: true,
+        isFollowed: false,
         caption: "Late night vibes // piano version 🎹✨",
         video: "./videos/8.mp4",
 
@@ -96,7 +96,7 @@ const reels = [
     {
         username: "techreviews101",
         likeCount: 23180,
-        isLiked: true,
+        isLiked: false,
         commentCount: 481,
         shareCount: 120,
         isFollowed: false,
@@ -111,16 +111,16 @@ const reels = [
         isLiked: false,
         commentCount: 350,
         shareCount: 92,
-        isFollowed: true,
+        isFollowed: false,
         caption: "GSAP can literally change your career. Start today.",
         video: "./videos/10.mp4",
         userprofile: "https://images.unsplash.com/photo-1494790108377-be9c29b29330"
     }
 ];
 
+let all_reels = document.querySelector('.all-reels');
 
 function add_data(){
-let all_reels = document.querySelector('.all-reels');
 let clutter = '';
 reels.forEach(function(elem,idx){
     clutter += `
@@ -138,15 +138,15 @@ reels.forEach(function(elem,idx){
                     </div>
                     <div class="right">
                         <div id="${idx}" class="like">
-                           <div class="like-logo">${elem.isLiked?'<i id="fill" class="ri-poker-hearts-fill"></i>':'<i class="ri-poker-hearts-line"></i>'}</div>
+                           <h4 class="like-logo">${elem.isLiked?'<i id="fill" class="ri-poker-hearts-fill"></i>':'<i class="ri-poker-hearts-line"></i>'}</h4>
                             <p>${elem.likeCount}</p>
                         </div>
                         <div class="comment">
-                           <div class="comment-logo"><i class="ri-chat-3-line"></i></div>
+                           <h4 class="comment-logo"><i class="ri-chat-3-line"></i></h4>
                             <p>${elem.commentCount}</p>
                         </div>
                         <div class="share">
-                            <div class="share_logo"><i class="ri-share-forward-line"></i></div>
+                            <h4 class="share_logo"><i class="ri-share-forward-line"></i></h4>
                             <p>${elem.shareCount}</p>
                         </div>
                         <div class="menu">
@@ -160,3 +160,17 @@ all_reels.innerHTML = clutter;
 }
 
 add_data();
+
+all_reels.addEventListener('click', function(dets){
+    if(dets.target.className == "like"){
+        if(!reels[dets.target.id].isLiked){
+        reels[dets.target.id].likeCount++
+        reels[dets.target.id].isLiked = true
+        }
+        else{
+        reels[dets.target.id].likeCount--
+        reels[dets.target.id].isLiked = false  
+        }
+    }
+    add_data();
+})
