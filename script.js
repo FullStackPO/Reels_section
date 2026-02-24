@@ -5,7 +5,7 @@ const reels = [
         isLiked: false,
         commentCount: 423,
         shareCount: 92,
-        isFollowed: false,
+        isFollowed: true,
         caption: "Dark mode > light mode. Change my mind.",
         video: "./videos/1.mp4",
         userprofile: "https://images.unsplash.com/photo-1613915617430-8ab0fd7c6baf?q=80&w=930&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
@@ -39,7 +39,7 @@ const reels = [
         isLiked: false,
         commentCount: 822,
         shareCount: 201,
-        isFollowed: false,
+        isFollowed: true,
         caption: "My solo Bali trip changed everything 🌴",
         video: "./videos/4.mp4",
 
@@ -63,7 +63,7 @@ const reels = [
         isLiked: false,
         commentCount: 540,
         shareCount: 87,
-        isFollowed: false,
+        isFollowed: true,
         caption: "No gym? No problem. Do this 12-min workout at home.",
         video: "./videos/6.mp4",
 
@@ -99,7 +99,7 @@ const reels = [
         isLiked: false,
         commentCount: 481,
         shareCount: 120,
-        isFollowed: false,
+        isFollowed: true,
         caption: "The most underrated smartphone of 2024 📱",
         video: "./videos/9.mp4",
 
@@ -130,7 +130,7 @@ reels.forEach(function(elem,idx){
                         <div class="info">
                             <img src="${elem.userprofile}" alt="">
                             <h2>${elem.username}</h2>
-                            <button>Follow</button>
+                            <button id="${idx}" class="follow">${elem.isFollowed?'Unfollow':'Follow'}</button>
                         </div>
                         <div class="caption">
                             <h3>${elem.caption}</h3>
@@ -170,6 +170,16 @@ all_reels.addEventListener('click', function(dets){
         else{
         reels[dets.target.id].likeCount--
         reels[dets.target.id].isLiked = false  
+        }
+    }
+    add_data();
+
+    if(dets.target.className == "follow"){
+        if(!reels[dets.target.id].isFollowed){
+            reels[dets.target.id].isFollowed = true;
+        }
+        else{
+            reels[dets.target.id].isFollowed = false;
         }
     }
     add_data();
